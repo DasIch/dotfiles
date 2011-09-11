@@ -100,6 +100,16 @@ vmap <Down> ]egv
 " toggle NERDTree on F3
 nmap <F3> :NERDTreeToggle<CR>
 
+" show syntax highlighting group for word under cursor
+" taken from vimcasts.org/episodes/creating-colorschemes-for-vim/
+nmap <C-S-P> :call <SID>SynStack()<CR>
+function! <SID>SynStack()
+  if !exists("*synstack")
+    return
+  endif
+  echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+endfunc
+
 "}}}
 
 " event handlers {{{
