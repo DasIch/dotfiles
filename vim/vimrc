@@ -37,8 +37,8 @@ set cmdheight=2
 " always show status line
 set laststatus=2
 
-" [lines,columns position%modified] path read-onlyhelppreview
-set statusline=[%l,%c\ %p%%%M]\ %F\ %r%h%w
+" [lines,columns position%modified] path read-onlyhelppreview [vcs(branch)]
+set statusline=[%l,%c\ %p%%%M]\ %F\ %r%h%w\ %{fugitive#statusline()}
 
 set showcmd
 
