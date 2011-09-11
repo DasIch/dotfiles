@@ -1,0 +1,22 @@
+[user]
+	name = Daniel Neuhäuser
+	email = dasdasich@gmail.com
+
+[github]
+	user = DasIch
+
+[color]
+	ui = auto
+
+[merge]
+	tool = threesome
+
+[mergetool]
+	prompt = false
+
+[mergetool "threesome"]
+	cmd = gvim -f $BASE $LOCAL $REMOTE $MERGED -c 'ThreesomeInit'
+	trustExitCode = true
+
+[core]
+	excludesfile = ~/.gitexcludes

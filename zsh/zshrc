@@ -1,0 +1,6 @@
+# path to configuration
+ZSH=~/.zsh
+ZSH_THEME="dasich"
+
+# initialize configuration
+source $ZSH/init.sh

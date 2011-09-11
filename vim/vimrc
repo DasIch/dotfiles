@@ -1,0 +1,129 @@
+" settings {{{
+" deactivate backwards compatibility with vi
+set nocompatible
+
+" add bundles to `runtimepath`
+call pathogen#infect('~/.vim/bundle')
+
+" use utf-8 as default encoding
+set encoding=utf-8
+
+" use markers for folds
+set foldmethod=marker
+
+" UI"{{{
+" activate syntax highlighting
+syntax on
+
+" load plugin/indent files based on filetype
+filetype plugin indent on
+
+colorscheme fruity
+
+" \t -> ▸, EOL -> ¬
+" lines continuing to the right ❯, to the left ❮
+set list
+set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮
+
+" write changes to the tty more often
+set ttyfast
+
+" show absolute line numbers
+set number
+
+" make command line two lines high
+set cmdheight=2
+
+" always show status line
+set laststatus=2
+
+" [lines,columns position%modified] path read-onlyhelppreview
+set statusline=[%l,%c\ %p%%%M]\ %F\ %r%h%w
+
+set showcmd
+
+" hide menu- and toolbar
+set guioptions=
+
+" keep a distance of 5 to the outermost visible line/column when scrolling
+set scrolloff=5
+set sidescrolloff=5
+
+" don't wrap lines
+set nowrap
+"}}}
+
+" backup"{{{
+set backup
+set backupdir=~/.vim/tmp/backup// " backup files
+set undodir=~/.vim/tmp/undo//     " undo files
+set directory=~/.vim/tmp/swap//   " swap files
+"}}}
+"}}}
+
+" mappings "{{{
+" toggle between absolute and relative line numbers
+nmap <leader>n :call ToggleNumber()<CR>
+function! ToggleNumber()
+  if &number
+    set relativenumber
+  else
+    set number
+  endif
+endfunction
+
+" use arrow keys for indenting
+nmap <silent> <Left> <<
+nmap <silent> <Right> >>
+
+imap <silent> <Left> <C-D>
+imap <silent> <Right> <C-T>
+
+vmap <silent> <Left> <
+vmap <silent> <Right> >
+
+" show search matches in the center
+nmap n nzzzv
+nmap N Nzzzv
+
+" toggle Gundo on F2
+nmap <F2> :GundoToggle<CR>
+
+" move single line (requires unimpaired)
+nmap <Up> [e
+nmap <Down> ]e
+
+" move multiple lines (requires unimpaired)
+vmap <Up> [egv
+vmap <Down> ]egv
+
+" toggle NERDTree on F3
+nmap <F3> :NERDTreeToggle<CR>
+
+"}}}
+
+" event handlers {{{
+
+" reload vimrc
+autocmd BufWritePost .vimrc source %
+"}}}
+
+" plugin configuration"{{{
+" SuperTab {{{
+let g:SuperTabDefaultCompletionType = "context"
+"}}}
+
+" MiniBufExpl {{{
+let g:statusLineText = ""
+"}}}
+
+" Command-T {{{
+let g:CommandTMaxHeight = 10
+" }}}
+"}}}
+
+" filetype definitions {{{
+
+" the git stuff is a bit too restrictive
+autocmd BufNewFile,BufRead gitconfig set filetype=gitconfig
+" }}}

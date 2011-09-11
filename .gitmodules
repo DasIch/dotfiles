@@ -1,0 +1,27 @@
+[submodule "vim/vim/bundle/minibufexpl"]
+	path = vim/vim/bundle/minibufexpl
+	url = https://github.com/fholgado/minibufexpl.vim
+[submodule "vim/vim/bundle/gundo"]
+	path = vim/vim/bundle/gundo
+	url = https://github.com/sjl/gundo.vim.git
+[submodule "vim/vim/bundle/unimpaired"]
+	path = vim/vim/bundle/unimpaired
+	url = https://github.com/tpope/vim-unimpaired.git
+[submodule "vim/vim/bundle/supertab"]
+	path = vim/vim/bundle/supertab
+	url = https://github.com/ervandew/supertab
+[submodule "vim/vim/bundle/git"]
+	path = vim/vim/bundle/git
+	url = https://github.com/tpope/vim-git.git
+[submodule "vim/vim/bundle/threesome"]
+	path = vim/vim/bundle/threesome
+	url = https://github.com/sjl/threesome.vim.git
+[submodule "vim/vim/bundle/command-t"]
+	path = vim/vim/bundle/command-t
+	url = git://github.com/wincent/Command-T.git
+[submodule "vim/vim/bundle/nerdtree"]
+	path = vim/vim/bundle/nerdtree
+	url = https://github.com/scrooloose/nerdtree
+[submodule "vim/vim/bundle/fugitive"]
+	path = vim/vim/bundle/fugitive
+	url = https://github.com/tpope/vim-fugitive.git
