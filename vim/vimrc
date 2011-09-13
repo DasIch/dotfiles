@@ -115,7 +115,7 @@ endfunc
 " event handlers {{{
 
 " reload vimrc
-autocmd BufWritePost .vimrc source %
+autocmd BufWritePost *vimrc source %
 "}}}
 
 " plugin configuration"{{{
