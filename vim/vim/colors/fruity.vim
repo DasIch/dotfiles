@@ -75,3 +75,9 @@ hi MBEVisibleActive        guifg=#ffffff
 hi MBEVisibleNormalActive  guifg=#ffffff
 hi MBEVisibleChangedActive guifg=#ffffff gui=bold,italic
 "}}}
+
+" Diff {{{
+hi DiffAdd    guibg=#254000
+hi DiffChange guibg=#ffbb00
+hi DiffDelete guibg=#400015
+" }}}
