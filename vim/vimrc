@@ -120,12 +120,6 @@ vmap <Leader>a: :Tabularize /:\zs<CR>
 
 "}}}
 
-" event handlers {{{
-
-" reload vimrc
-autocmd BufWritePost *vimrc source %
-"}}}
-
 " plugin configuration"{{{
 " SuperTab {{{
 let g:SuperTabDefaultCompletionType = "context"
