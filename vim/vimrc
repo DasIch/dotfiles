@@ -86,20 +86,6 @@ vmap <silent> <Right> >
 nmap n nzzzv
 nmap N Nzzzv
 
-" toggle Gundo on F2
-nmap <F2> :GundoToggle<CR>
-
-" move single line (requires unimpaired)
-nmap <Up> [e
-nmap <Down> ]e
-
-" move multiple lines (requires unimpaired)
-vmap <Up> [egv
-vmap <Down> ]egv
-
-" toggle NERDTree on F3
-nmap <F3> :NERDTreeToggle<CR>
-
 " show syntax highlighting group for word under cursor
 " taken from vimcasts.org/episodes/creating-colorschemes-for-vim/
 nmap <C-S-P> :call <SID>SynStack()<CR>
@@ -110,6 +96,21 @@ function! <SID>SynStack()
   echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
 endfunc
 
+" plugin mappings {{{
+" move single line (requires unimpaired)
+nmap <Up> [e
+nmap <Down> ]e
+
+" move multiple lines (requires unimpaired)
+vmap <Up> [egv
+vmap <Down> ]egv
+
+" toggle Gundo on F2
+nmap <F2> :GundoToggle<CR>
+
+" toggle NERDTree on F3
+nmap <F3> :NERDTreeToggle<CR>
+
 " alignment mappings... (requires tabular)
 " ...by =
 nmap <Leader>a= :Tabularize /=<CR>
@@ -117,6 +118,8 @@ vmap <Leader>a= :Tabularize /=<CR>
 " ...by :
 nmap <Leader>a: :Tabularize /:\zs<CR>
 vmap <Leader>a: :Tabularize /:\zs<CR>
+
+" }}}
 
 "}}}
 
