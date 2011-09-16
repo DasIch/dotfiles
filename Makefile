@@ -6,6 +6,7 @@ help:
 	@echo "Install:"
 	@echo "    (un)install-hub      -  Git wrapper that adds GH support"
 	@echo "    (un)install-lodgeit  -  Lodgeit pasting"
+	@echo "    (un)install-vim      -  (G)vim configuration"
 
 update-bundles:
 	git submodule foreach "git pull"
@@ -26,3 +27,11 @@ install-lodgeit: prepare-bin
 
 uninstall-lodgeit:
 	rm -f bin/lodgeit
+
+install-vim:
+	ln -s `readlink -f vim/vimrc` $(HOME)/.vimrc
+	ln -s `readlink -f vim/vim` $(HOME)/.vim
+
+uninstall-vim:
+	rm -f $(HOME)/.vimrc
+	rm -f $(HOME)/.vim
