@@ -3,4 +3,4 @@ vim/vim/tmp/**
 !vim/vim/tmp/undo/.keep
 !vim/vim/tmp/swap/.keep
 
-bin/hub
+bin/*
