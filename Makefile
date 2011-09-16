@@ -1,6 +1,7 @@
 help:
 	@echo "Commands:"
 	@echo "    update-bundles  -  updates all bundles"
+	@echo "    clean           -  Like uninstall but includes repo contents"
 	@echo "    help            -  Show this"
 	@echo
 	@echo "Install:"
@@ -12,6 +13,9 @@ help:
 
 update-bundles:
 	git submodule foreach "git pull"
+
+clean: uninstall
+	rmdir bin
 
 install: install-hub install-lodgeit install-vim install-zsh
 
