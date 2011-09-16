@@ -1,0 +1,5 @@
+# Add ~/bin to $PATH if it exists
+if [ -e ~/bin ]
+then
+	PATH="$HOME/bin:$PATH"
+fi
