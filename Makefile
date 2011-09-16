@@ -4,6 +4,7 @@ help:
 	@echo "    help            -  Show this"
 	@echo
 	@echo "Install:"
+	@echo "    (un)install          -  Everything"
 	@echo "    (un)install-hub      -  Git wrapper that adds GH support"
 	@echo "    (un)install-lodgeit  -  Lodgeit pasting"
 	@echo "    (un)install-vim      -  (G)vim configuration"
@@ -11,6 +12,10 @@ help:
 
 update-bundles:
 	git submodule foreach "git pull"
+
+install: install-hub install-lodgeit install-vim install-zsh
+
+uninstall: uninstall-hub uninstall-lodgeit uninstall-vim uninstall-zsh
 
 prepare-bin:
 	mkdir bin
