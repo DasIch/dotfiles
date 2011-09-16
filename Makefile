@@ -7,6 +7,7 @@ help:
 	@echo "    (un)install-hub      -  Git wrapper that adds GH support"
 	@echo "    (un)install-lodgeit  -  Lodgeit pasting"
 	@echo "    (un)install-vim      -  (G)vim configuration"
+	@echo "    (un)install-zsh      -  ZSH configuration"
 
 update-bundles:
 	git submodule foreach "git pull"
@@ -35,3 +36,13 @@ install-vim:
 uninstall-vim:
 	rm -f $(HOME)/.vimrc
 	rm -f $(HOME)/.vim
+
+install-zsh:
+	ln -s `readlink -f zsh/zshrc` $(HOME)/.zshrc
+	ln -s `readlink -f zsh/zshenv` $(HOME)/.zshenv
+	ln -s `readlink -f zsh/zsh` $(HOME)/.zsh
+
+uninstall-zsh:
+	rm -f $(HOME)/.zshrc
+	rm -f $(HOME)/.zshenv
+	rm -f $(HOME)/.zsh
