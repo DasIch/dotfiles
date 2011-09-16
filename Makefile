@@ -1,6 +1,7 @@
 help:
 	@echo "Commands:"
-	@echo "    update-bundles - updates all bundles"
+	@echo "    update-bundles  -  updates all bundles"
+	@echo "    help            -  Show this"
 	@echo
 	@echo "Install:"
 	@echo "    (un)install-hub - Git wrapper that adds GH support"
