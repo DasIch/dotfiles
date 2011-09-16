@@ -10,14 +10,17 @@ help:
 update-bundles:
 	git submodule foreach "git pull"
 
-install-hub:
+prepare-bin:
+	mkdir bin
+
+install-hub: prepare-bin
 	curl http://defunkt.io/hub/standalone -sLo bin/hub
 	chmod +x bin/hub
 
 uninstall-hub:
 	rm -f bin/hub
 
-install-lodgeit:
+install-lodgeit: prepare-bin
 	curl http://dev.pocoo.org/hg/lodgeit-main/raw-file/tip/scripts/lodgeit.py -sLo bin/lodgeit
 	chmod +x bin/lodgeit
 
