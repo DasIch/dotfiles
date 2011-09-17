@@ -4,3 +4,7 @@ vim/vim/tmp/**
 !vim/vim/tmp/swap/.keep
 
 bin/*
+
+virtualenv/envs
+virtualenv/hooks/*
+!virtualenv/hooks/postactivate

@@ -15,10 +15,15 @@ zstyle ':vcs_info:*' actionformats " on %{$fg[grey]%}%s%{$reset_color%}:%b%%{$fg
 # update vcs_info
 function precmd() {
   vcs_info
-  PS1="\
+  BASEPROMPT="\
 %{$fg[magenta]%}%n%{$reset_color%} \
 at %{$fg[cyan]%}%m%{$reset_color%} \
 in %{$fg_bold[green]%c%}%{$reset_color%}\
-${vcs_info_msg_0_}
+${vcs_info_msg_0_}"
+  if [ "$VIRTUAL_ENV" != "" ]
+  then
+    BASEPROMPT="$BASEPROMPT working on %{$fg_bold[green]$(basename $VIRTUAL_ENV)%}%{$reset_color%}"
+  fi
+  PS1="$BASEPROMPT
 %# "
 }

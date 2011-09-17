@@ -1,0 +1,3 @@
+#!/bin/zsh
+# per default virtualenvwrapper creates a postactivate hook that sets PS1,
+# the existance of this hook(file) prevents that

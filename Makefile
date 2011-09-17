@@ -5,11 +5,12 @@ help:
 	@echo "    help            -  Show this"
 	@echo
 	@echo "Install:"
-	@echo "    (un)install          -  Everything"
-	@echo "    (un)install-hub      -  Git wrapper that adds GH support"
-	@echo "    (un)install-lodgeit  -  Lodgeit pasting"
-	@echo "    (un)install-vim      -  (G)vim configuration"
-	@echo "    (un)install-zsh      -  ZSH configuration"
+	@echo "    (un)install                    -  Everything (requires root)"
+	@echo "    (un)install-hub                -  Git wrapper that adds GH support"
+	@echo "    (un)install-lodgeit            -  Lodgeit pasting"
+	@echo "    (un)install-vim                -  (G)vim configuration"
+	@echo "    (un)install-zsh                -  ZSH configuration"
+	@echo "    (un)install-virtualenvwrapper  -  Virtualenvwrapper (requires root)"
 
 update-bundles:
 	git submodule foreach "git pull"
@@ -17,9 +18,9 @@ update-bundles:
 clean: uninstall
 	rmdir bin
 
-install: install-hub install-lodgeit install-vim install-zsh
+install: install-hub install-lodgeit install-vim install-zsh install-virtualenvwrapper
 
-uninstall: uninstall-hub uninstall-lodgeit uninstall-vim uninstall-zsh
+uninstall: uninstall-hub uninstall-lodgeit uninstall-vim uninstall-zsh uninstall-virtualenvwrapper
 
 prepare-bin:
 	mkdir bin
@@ -55,3 +56,11 @@ uninstall-zsh:
 	rm -f $(HOME)/.zshrc
 	rm -f $(HOME)/.zshenv
 	rm -f $(HOME)/.zsh
+
+install-virtualenvwrapper:
+	pip install virtualenvwrapper
+	ln -s `readlink -f virtualenv` $(HOME)/.virtualenv
+
+uninstall-virtualenvwrapper:
+	pip uninstall virtualenvwrapper
+	rm -f $(HOME)/.virtualenv

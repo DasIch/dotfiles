@@ -3,3 +3,17 @@ if [ -e ~/bin ]
 then
 	PATH="$HOME/bin:$PATH"
 fi
+
+# virtualenvwrapper configuration
+# put virtualenvs into
+export WORKON_HOME="$HOME/.virtualenv/envs"
+# lookup hooks in
+export VIRTUALENVWRAPPER_HOOK_DIR="$HOME/.virtualenv/hooks"
+# use these default args
+export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='--no-site-packages'
+
+# pip configuration
+# install into virtualenv per default
+export PIP_RESPECT_VIRTUALENV=true
+# use the same directory as virtualenvwrapper for virtualenvs
+export PIP_VIRTUALENV_BASE=$WORKON_HOME
