@@ -8,8 +8,8 @@ zstyle ':vcs_info:*' use-prompt-escapes true
 zstyle ':vcs_info:*' check-for-changes true
 zstyle ':vcs_info:*' stagedstr "!"
 zstyle ':vcs_info:*' unstagedstr "?"
-zstyle ':vcs_info:*' formats " on %{$fg[grey]%}%s%{$reset_color%}:%b%%{$fg[red]%}%u%c%{$reset_color%}"
-zstyle ':vcs_info:*' actionformats " on %{$fg[grey]%}%s%{$reset_color%}:%b%%{$fg[red]%}%u%c %a%{$reset_color%}"
+zstyle ':vcs_info:*' formats " on %{$fg[grey]%}%s%{$reset_color%}:%{$fg_bold[green]%}%b%{$reset_color%}%%{$fg[red]%}%u%c%{$reset_color%}"
+zstyle ':vcs_info:*' actionformats " on %{$fg[grey]%}%s%{$reset_color%}:%{$fg_bold[green]%}%b%{$reset_color%}%%{$fg[red]%}%u%c %a%{$reset_color%}"
 
 
 # update vcs_info
