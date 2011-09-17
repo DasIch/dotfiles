@@ -23,7 +23,7 @@ install: install-hub install-lodgeit install-vim install-zsh install-virtualenvw
 uninstall: uninstall-hub uninstall-lodgeit uninstall-vim uninstall-zsh uninstall-virtualenvwrapper
 
 prepare-bin:
-	mkdir bin
+	mkdir -p bin
 
 install-hub: prepare-bin
 	curl http://defunkt.io/hub/standalone -sLo bin/hub
