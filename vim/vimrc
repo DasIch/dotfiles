@@ -38,7 +38,7 @@ set cmdheight=2
 set laststatus=2
 
 " [lines,columns position%modified] path read-onlyhelppreview [vcs(branch)]
-set statusline=[%l,%c\ %p%%%M]\ %F\ %r%h%w\ %{fugitive#statusline()}\ %{SyntasticStatuslineFlag()}
+set statusline=[%l,%c\ %p%%%M]\ %F\ %r%h%w\ %{fugitive#statusline()}\ %#redbar#%{SyntasticStatuslineFlag()}%*
 
 set showcmd
 

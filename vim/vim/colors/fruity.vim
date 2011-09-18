@@ -41,6 +41,7 @@ hi CursorLine   guibg=#001A21
 hi ColorColumn  guibg=#00252e
 hi LineNr       guifg=#aaaaaa guibg=#1e1e1e
 hi MatchParen   guifg=#b1b711 guibg=NONE    gui=bold
+hi RedBar       guifg=#ff0000 guibg=#464646 gui=bold
 "}}}
 
 " Specials {{{
