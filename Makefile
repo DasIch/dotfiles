@@ -41,10 +41,12 @@ uninstall-lodgeit:
 
 install-vim:
 	ln -s `readlink -f vim/vimrc` $(HOME)/.vimrc
+	ln -s `readlink -f vim/gvimrc` $(HOME)/.gvimrc
 	ln -s `readlink -f vim/vim` $(HOME)/.vim
 
 uninstall-vim:
 	rm -f $(HOME)/.vimrc
+	rm -f $(HOME)/.gvimrc
 	rm -f $(HOME)/.vim
 
 install-zsh:
