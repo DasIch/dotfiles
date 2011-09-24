@@ -9,3 +9,6 @@ setlocal formatoptions-=t
 
 " automatically format comments
 setlocal formatoptions+=c
+
+" allow wrapping of sphinx-style comments
+setlocal comments+=b:#:
