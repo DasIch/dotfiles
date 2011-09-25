@@ -2,15 +2,14 @@ help:
 	@echo "Commands:"
 	@echo "    update-bundles  -  updates all bundles"
 	@echo "    clean           -  Like uninstall but includes repo contents"
-	@echo "    help            -  Show this"
-	@echo
-	@echo "Install:"
+	@echo "    help            -  Show this" @echo @echo "Install:"
 	@echo "    (un)install                    -  Everything (requires root)"
 	@echo "    (un)install-hub                -  Git wrapper that adds GH support"
 	@echo "    (un)install-lodgeit            -  Lodgeit pasting"
 	@echo "    (un)install-vim                -  (G)vim configuration"
 	@echo "    (un)install-zsh                -  ZSH configuration"
 	@echo "    (un)install-virtualenvwrapper  -  Virtualenvwrapper (requires root)"
+	@echo "    (un)install-pyflakes           -  PyFlakes (requires root)"
 
 update-bundles:
 	git submodule foreach "git pull"
@@ -18,9 +17,9 @@ update-bundles:
 clean: uninstall
 	rmdir bin
 
-install: install-hub install-lodgeit install-vim install-zsh install-virtualenvwrapper
+install: install-hub install-lodgeit install-vim install-zsh install-virtualenvwrapper install-pyflakes
 
-uninstall: uninstall-hub uninstall-lodgeit uninstall-vim uninstall-zsh uninstall-virtualenvwrapper
+uninstall: uninstall-hub uninstall-lodgeit uninstall-vim uninstall-zsh uninstall-virtualenvwrapper uninstall-pyflakes
 
 prepare-bin:
 	mkdir -p bin
@@ -66,3 +65,9 @@ install-virtualenvwrapper:
 uninstall-virtualenvwrapper:
 	pip uninstall virtualenvwrapper
 	rm -f $(HOME)/.virtualenv
+
+install-pyflakes:
+	pip install "hg+http://bitbucket.org/birkenfeld/pyflakes-ast#egg=pyflakes"
+
+uninstall-pyflakes:
+	pip uninstall pyflakes
