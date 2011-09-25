@@ -1,0 +1,5 @@
+" set gvim width to a reasonable size
+set columns=90
+
+" hide all those toolbars etc.
+set guioptions=
