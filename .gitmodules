@@ -34,3 +34,6 @@
 [submodule "vim/vim/bundle/python"]
 	path = vim/vim/bundle/python
 	url = git://github.com/vim-scripts/python.vim--Vasiliev.git
+[submodule "vim/vim/bundle/quickfixstatus"]
+	path = vim/vim/bundle/quickfixstatus
+	url = git://github.com/dannyob/quickfixstatus.git
