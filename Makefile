@@ -67,7 +67,7 @@ uninstall-virtualenvwrapper:
 	rm -f $(HOME)/.virtualenv
 
 install-pyflakes:
-	pip install "hg+http://bitbucket.org/birkenfeld/pyflakes-ast#egg=pyflakes"
+	pip install "hg+http://bitbucket.org/birkenfeld/pyflakes-ast@experimental#egg=pyflakes"
 
 uninstall-pyflakes:
 	pip uninstall pyflakes
