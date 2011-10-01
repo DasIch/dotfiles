@@ -25,3 +25,4 @@
 	ci = commit
 	co = checkout
 	st = status
+	di = diff
