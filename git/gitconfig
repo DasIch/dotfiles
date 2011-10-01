@@ -23,6 +23,7 @@
 
 [alias]
 	ci = commit
+	cia = commit -a
 	co = checkout
 	st = status
 	di = diff
