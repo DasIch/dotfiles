@@ -27,3 +27,4 @@
 	co = checkout
 	st = status
 	di = diff
+	tags = tag -l
