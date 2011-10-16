@@ -128,7 +128,7 @@ vmap <Leader>a: :Tabularize /:\zs<CR>
 
 " plugin configuration"{{{
 " SuperTab {{{
-let g:SuperTabDefaultCompletionType = "context"
+let g:SuperTabDefaultCompletionType = "<C-N>"
 "}}}
 
 " MiniBufExpl {{{
