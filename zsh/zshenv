@@ -4,6 +4,11 @@ then
 	PATH="$HOME/bin:$PATH"
 fi
 
+if [ -e ~/.cabal/bin ]
+then
+	PATH="$HOME/.cabal/bin:$PATH"
+fi
+
 # virtualenvwrapper configuration
 # put virtualenvs into
 export WORKON_HOME="$HOME/.virtualenv/envs"
