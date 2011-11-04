@@ -1,0 +1,13 @@
+[ui]
+username = DasIch <dasdasich@gmail.com>
+editor = vim
+
+[extensions]
+color =
+purge =
+graphlog =
+progress =
+pager =
+
+[pager]
+pager = LESS='FSRX' less

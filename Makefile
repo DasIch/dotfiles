@@ -1,8 +1,8 @@
 help:
 	@echo "Commands:"
-	@echo "    update-bundles  -  updates all bundles"
-	@echo "    clean           -  Like uninstall but includes repo contents"
-	@echo "    help            -  Show this" @echo @echo "Install:"
+	@echo "    update-bundles                 -  updates all bundles"
+	@echo "    clean                          -  Like uninstall but includes repo contents"
+	@echo "    help                           -  Show this help"
 	@echo "    (un)install                    -  Everything (requires root)"
 	@echo "    (un)install-hub                -  Git wrapper that adds GH support"
 	@echo "    (un)install-lodgeit            -  Lodgeit pasting"
@@ -10,6 +10,7 @@ help:
 	@echo "    (un)install-zsh                -  ZSH configuration"
 	@echo "    (un)install-virtualenvwrapper  -  Virtualenvwrapper (requires root)"
 	@echo "    (un)install-pyflakes           -  PyFlakes (requires root)"
+	@echo "    (un)install-hg                 -  Mercurial configuration"
 
 update-bundles:
 	git submodule foreach "git pull"
@@ -17,9 +18,11 @@ update-bundles:
 clean: uninstall
 	rmdir bin
 
-install: install-hub install-lodgeit install-vim install-zsh install-virtualenvwrapper install-pyflakes
+install: install-hub install-lodgeit install-vim install-zsh \
+         install-virtualenvwrapper install-pyflakes install-hg
 
-uninstall: uninstall-hub uninstall-lodgeit uninstall-vim uninstall-zsh uninstall-virtualenvwrapper uninstall-pyflakes
+uninstall: uninstall-hub uninstall-lodgeit uninstall-vim uninstall-zsh \
+           uninstall-virtualenvwrapper uninstall-pyflakes uninstall-hg
 
 prepare-bin:
 	mkdir -p bin
@@ -71,3 +74,9 @@ install-pyflakes:
 
 uninstall-pyflakes:
 	pip uninstall pyflakes
+
+install-hg:
+	ln -s `readlink -f hg/hgrc` $(HOME)/.hgrc
+
+uninstall-hg:
+	rm -f $(HOME)/.hgrc
