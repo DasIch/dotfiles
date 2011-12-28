@@ -24,6 +24,8 @@ install: install-hub install-lodgeit install-vim install-zsh \
 uninstall: uninstall-hub uninstall-lodgeit uninstall-vim uninstall-zsh \
            uninstall-virtualenvwrapper uninstall-pyflakes uninstall-hg
 
+update: update-hub update-lodgeit update-virtualenvwrapper update-pyflakes
+
 prepare-bin:
 	mkdir -p bin
 
@@ -31,12 +33,16 @@ install-hub: prepare-bin
 	curl http://defunkt.io/hub/standalone -sLo bin/hub
 	chmod +x bin/hub
 
+update-hub: install-hub
+
 uninstall-hub:
 	rm -f bin/hub
 
 install-lodgeit: prepare-bin
 	curl http://dev.pocoo.org/hg/lodgeit-main/raw-file/tip/scripts/lodgeit.py -sLo bin/lodgeit
 	chmod +x bin/lodgeit
+
+update-lodgeit: install-lodgeit
 
 uninstall-lodgeit:
 	rm -f bin/lodgeit
@@ -65,12 +71,18 @@ install-virtualenvwrapper:
 	pip install virtualenvwrapper
 	ln -s `readlink -f virtualenv` $(HOME)/.virtualenv
 
+update-virtualenvwrapper:
+	pip install --upgrade virtualenvwrapper
+
 uninstall-virtualenvwrapper:
 	pip uninstall virtualenvwrapper
 	rm -f $(HOME)/.virtualenv
 
 install-pyflakes:
 	pip install "hg+http://bitbucket.org/birkenfeld/pyflakes-ast@experimental#egg=pyflakes"
+
+update-pyflakes:
+	pip install --upgrade "hg+http://bitbucket.org/birkenfeld/pyflakes-ast@experimental#egg=pyflakes"
 
 uninstall-pyflakes:
 	pip uninstall pyflakes
