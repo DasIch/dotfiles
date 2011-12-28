@@ -37,3 +37,6 @@
 [submodule "vim/vim/bundle/quickfixstatus"]
 	path = vim/vim/bundle/quickfixstatus
 	url = git://github.com/dannyob/quickfixstatus.git
+[submodule "vim/vim/bundle/cabal"]
+	path = vim/vim/bundle/cabal
+	url = http://github.com/Twinside/vim-syntax-haskell-cabal
