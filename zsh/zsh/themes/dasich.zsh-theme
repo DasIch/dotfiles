@@ -8,22 +8,18 @@ zstyle ':vcs_info:*' use-prompt-escapes true
 zstyle ':vcs_info:*' check-for-changes true
 zstyle ':vcs_info:*' stagedstr "!"
 zstyle ':vcs_info:*' unstagedstr "?"
-zstyle ':vcs_info:*' formats " on %{$fg[grey]%}%s%{$reset_color%}:%{$fg_bold[green]%}%b%{$reset_color%}%%{$fg[red]%}%u%c%{$reset_color%}"
-zstyle ':vcs_info:*' actionformats " on %{$fg[grey]%}%s%{$reset_color%}:%{$fg_bold[green]%}%b%{$reset_color%}%%{$fg[red]%}%u%c %a%{$reset_color%}"
+zstyle ':vcs_info:*' formats "on %s:%b%u%c"
+zstyle ':vcs_info:*' actionformats "on %s:%b%u%c %a"
 
 
 # update vcs_info
 function precmd() {
   vcs_info
-  BASEPROMPT="\
-%{$fg[magenta]%}%n%{$reset_color%} \
-at %{$fg[cyan]%}%m%{$reset_color%} \
-in %{$fg_bold[green]%c%}%{$reset_color%}\
-${vcs_info_msg_0_}"
+  BASEPROMPT="${fg[white]}%n at %m in %c ${vcs_info_msg_0_}"
   if [ "$VIRTUAL_ENV" != "" ]
   then
-    BASEPROMPT="$BASEPROMPT working on %{$fg_bold[green]$(basename $VIRTUAL_ENV)%}%{$reset_color%}"
+    BASEPROMPT="$BASEPROMPT working on $(basename $VIRTUAL_ENV)"
   fi
   PS1="$BASEPROMPT
-%# "
+%# $terminfo[sgr0]"
 }
