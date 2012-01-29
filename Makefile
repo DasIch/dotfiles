@@ -28,6 +28,7 @@ update: update-hub update-lodgeit update-virtualenvwrapper update-pyflakes
 
 prepare-bin:
 	mkdir -p bin
+	ln -s `stat -f "$(PWD)/%N" bin` $(HOME)/bin
 
 install-hub: prepare-bin
 	curl http://defunkt.io/hub/standalone -sLo bin/hub
@@ -48,9 +49,9 @@ uninstall-lodgeit:
 	rm -f bin/lodgeit
 
 install-vim:
-	ln -s `readlink -f vim/vimrc` $(HOME)/.vimrc
-	ln -s `readlink -f vim/gvimrc` $(HOME)/.gvimrc
-	ln -s `readlink -f vim/vim` $(HOME)/.vim
+	ln -s `stat -f "$(PWD)/%N" vim/vimrc` $(HOME)/.vimrc
+	ln -s `stat -f "$(PWD)/%N" vim/gvimrc` $(HOME)/.gvimrc
+	ln -s `stat -f "$(PWD)/%N" vim/vim` $(HOME)/.vim
 
 uninstall-vim:
 	rm -f $(HOME)/.vimrc
@@ -58,9 +59,9 @@ uninstall-vim:
 	rm -f $(HOME)/.vim
 
 install-zsh:
-	ln -s `readlink -f zsh/zshrc` $(HOME)/.zshrc
-	ln -s `readlink -f zsh/zshenv` $(HOME)/.zshenv
-	ln -s `readlink -f zsh/zsh` $(HOME)/.zsh
+	ln -s `stat -f "$(PWD)/%N" zsh/zshrc` $(HOME)/.zshrc
+	ln -s `stat -f "$(PWD)/%N" zsh/zshnv` $(HOME)/.zshenv
+	ln -s `stat -f "$(PWD)/%N" zsh/zsh` $(HOME)/.zsh
 
 uninstall-zsh:
 	rm -f $(HOME)/.zshrc
@@ -69,7 +70,7 @@ uninstall-zsh:
 
 install-virtualenvwrapper:
 	pip install virtualenvwrapper
-	ln -s `readlink -f virtualenv` $(HOME)/.virtualenv
+	ln -s `stat -f "$(PWD)/%N" virtualenv` $(HOME)/.virtualenv
 
 update-virtualenvwrapper:
 	pip install --upgrade virtualenvwrapper
@@ -88,7 +89,7 @@ uninstall-pyflakes:
 	pip uninstall pyflakes
 
 install-hg:
-	ln -s `readlink -f hg/hgrc` $(HOME)/.hgrc
+	ln -s `stat -f "$(PWD)/%N" hg/hgrc` $(HOME)/.hgrc
 
 uninstall-hg:
 	rm -f $(HOME)/.hgrc
