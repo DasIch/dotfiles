@@ -14,8 +14,6 @@ fi
 export WORKON_HOME="$HOME/.virtualenv/envs"
 # lookup hooks in
 export VIRTUALENVWRAPPER_HOOK_DIR="$HOME/.virtualenv/hooks"
-# use these default args
-export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='--no-site-packages'
 
 # pip configuration
 # install into virtualenv per default
