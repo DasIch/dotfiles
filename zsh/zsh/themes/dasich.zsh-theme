@@ -20,7 +20,8 @@ function precmd() {
   then
     BASEPROMPT="$BASEPROMPT working on $(basename $VIRTUAL_ENV)"
   fi
-  PS1="$BASEPROMPT%1(j.
+  PS1="
+$BASEPROMPT%1(j.
 .%(?..
 ))%1(j.running ${(j., .)jobtexts}.)%1(j.%(?..; ).)%(?..exited with %?)
 %# $terminfo[sgr0]"
