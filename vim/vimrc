@@ -18,7 +18,8 @@ syntax on
 " load plugin/indent files based on filetype
 filetype plugin indent on
 
-colorscheme fruity
+set background=dark
+colorscheme solarized
 
 " \t -> ▸, EOL -> ¬
 " lines continuing to the right ❯, to the left ❮
