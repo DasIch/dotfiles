@@ -40,3 +40,6 @@
 [submodule "vim/vim/bundle/cabal"]
 	path = vim/vim/bundle/cabal
 	url = http://github.com/Twinside/vim-syntax-haskell-cabal
+[submodule "vim/vim/bundle/solarized"]
+	path = vim/vim/bundle/solarized
+	url = https://github.com/altercation/vim-colors-solarized.git
