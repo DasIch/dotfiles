@@ -11,6 +11,9 @@ set encoding=utf-8
 " use markers for folds
 set foldmethod=marker
 
+" ignore files
+set wildignore+=*.pyc
+
 " UI"{{{
 " activate syntax highlighting
 syntax on
