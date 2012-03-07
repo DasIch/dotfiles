@@ -8,6 +8,7 @@ if [ -e ~/.cabal/bin ]
 then
 	PATH="$HOME/.cabal/bin:$PATH"
 fi
+PATH=/usr/local/bin:$PATH
 
 # virtualenvwrapper configuration
 # put virtualenvs into
