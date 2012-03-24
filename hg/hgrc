@@ -2,6 +2,9 @@
 username = DasIch <dasdasich@gmail.com>
 editor = vim
 
+[pager]
+pager = LESS='FSRX' less
+
 [extensions]
 color =
 purge =
@@ -9,5 +12,12 @@ graphlog =
 progress =
 pager =
 
-[pager]
-pager = LESS='FSRX' less
+hgbb = ~/.hgextensions/hgbb/hgbb.py
+hgpaste = ~/.hgextensions/hgpaste/hgpaste.py
+
+[bb]
+username = DasIch
+default_method = ssh
+
+[paste]
+server = http://paste.pocoo.org

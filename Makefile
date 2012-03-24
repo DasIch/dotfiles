@@ -89,7 +89,12 @@ uninstall-pyflakes:
 	pip uninstall pyflakes
 
 install-hg:
+	cd hg/extensions && hg clone http://bitbucket.org/birkenfeld/hgbb
+	cd hg/extensions && hg clone http://bitbucket.org/birkenfeld/hgpaste
 	ln -s `stat -f "$(PWD)/%N" hg/hgrc` $(HOME)/.hgrc
+	ln -s `stat -f "$(PWD)/%N" hg/extensions` $(HOME)/.hgextensions
 
 uninstall-hg:
 	rm -f $(HOME)/.hgrc
+	rm -f $(HOME)/.hgextensions
+	rm -rf hg/extensions/{hgbb,hgpaste}
