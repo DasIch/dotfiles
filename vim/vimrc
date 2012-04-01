@@ -22,7 +22,11 @@ syntax on
 filetype plugin indent on
 
 set background=dark
-colorscheme solarized
+if has("gui_running")
+  colorscheme solarized
+else
+  colorscheme badwolf
+endif
 
 " \t -> ▸, EOL -> ¬
 " lines continuing to the right ❯, to the left ❮
