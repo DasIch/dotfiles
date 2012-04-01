@@ -8,5 +8,6 @@ bin/*
 virtualenv/envs
 virtualenv/hooks/*
 !virtualenv/hooks/postactivate
+!virtualenv/hooks/postmkvirtualenv
 
 hg/extensions/*
