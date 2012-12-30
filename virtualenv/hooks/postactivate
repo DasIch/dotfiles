@@ -1,3 +1,9 @@
 #!/bin/zsh
-# per default virtualenvwrapper creates a postactivate hook that sets PS1,
-# the existance of this hook(file) prevents that
+
+## virtualenv
+# node.js packages
+export npm_config_prefix=$VIRTUALENV
+
+# ruby gems
+export GEM_HOME=$VIRTUALENV
+export GEM_PATH=""
