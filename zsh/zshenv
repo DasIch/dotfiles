@@ -8,7 +8,9 @@ if [ -e ~/.cabal/bin ]
 then
 	PATH="$HOME/.cabal/bin:$PATH"
 fi
-PATH=/usr/local/bin:$PATH
+
+# shadow system paths with homebrew paths
+PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 
 # virtualenvwrapper configuration
 # put virtualenvs into

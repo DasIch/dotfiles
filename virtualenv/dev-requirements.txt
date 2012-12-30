@@ -1,4 +1,4 @@
-sphinx
+# sphinx
 -e git+git://github.com/RonnyPfannschmidt/pyflakes.git#egg=pyflakes-dev
-bpython
-tox
+# bpython
+# tox

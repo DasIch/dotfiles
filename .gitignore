@@ -11,3 +11,5 @@ virtualenv/hooks/*
 !virtualenv/hooks/postmkvirtualenv
 
 hg/extensions/*
+
+.DS_Store

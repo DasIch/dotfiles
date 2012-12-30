@@ -11,13 +11,3 @@ purge =
 graphlog =
 progress =
 pager =
-
-hgbb = ~/.hgextensions/hgbb/hgbb.py
-hgpaste = ~/.hgextensions/hgpaste/hgpaste.py
-
-[bb]
-username = DasIch
-default_method = ssh
-
-[paste]
-server = http://paste.pocoo.org
