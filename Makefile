@@ -71,12 +71,16 @@ uninstall-zsh:
 install-virtualenvwrapper:
 	pip install virtualenvwrapper
 	ln -s `stat -f "$(PWD)/%N" virtualenv` $(HOME)/.virtualenv
+	pip install virtualenvwrapper.npm
+	pip install virtualenvwrapper.gem
 
 update-virtualenvwrapper:
 	pip install --upgrade virtualenvwrapper
+	pip install --upgrade virtualenvwrapper.{npm,gem}
 
 uninstall-virtualenvwrapper:
 	pip uninstall virtualenvwrapper
+	pip uninstall virtualenvwrapper.{npm,gem}
 	rm -f $(HOME)/.virtualenv
 
 install-pyflakes:
