@@ -37,3 +37,8 @@ export PIP_DOWNLOAD_CACHE=$HOME/.pip_download_cache
 
 export LC_ALL=en_GB.UTF-8
 export LANG=en_GB.UTF-8
+
+if which rbenv > /dev/null;
+then
+	eval "$(rbenv init -)"
+fi
