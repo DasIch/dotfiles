@@ -14,11 +14,6 @@ then
 	PATH="/usr/local/Cellar/smlnj/110.75/libexec/bin:$PATH"
 fi
 
-if [ -e /usr/local/share/python ]
-then
-	PATH="/usr/local/share/python:$PATH"
-fi
-
 # shadow system paths with homebrew paths
 PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 
