@@ -1,3 +1,6 @@
+# shadow system paths with homebrew paths
+PATH="/usr/local/bin:/usr/local/sbin:$PATH"
+
 # Add ~/bin to $PATH if it exists
 if [ -e ~/bin ]
 then
@@ -14,8 +17,11 @@ then
 	PATH="/usr/local/Cellar/smlnj/110.75/libexec/bin:$PATH"
 fi
 
-# shadow system paths with homebrew paths
-PATH="/usr/local/bin:/usr/local/sbin:$PATH"
+if [ -e /opt/ocs-2.4b/bin ]
+then
+	PATH="/opt/ocs-2.4b/bin:$PATH"
+fi
+
 
 # virtualenvwrapper configuration
 # put virtualenvs into
